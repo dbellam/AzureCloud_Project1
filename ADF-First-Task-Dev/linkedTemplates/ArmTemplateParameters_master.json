@@ -1,0 +1,60 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-First-Task-Dev"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeCloudStg_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"FileServer_Local_password": {
+			"value": ""
+		},
+		"SqlServer1_connectionString": {
+			"value": "Integrated Security=True;Data Source=US-PF19M9NG\\SQLEXPRESS;Initial Catalog=EMP_DATA"
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer2_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeCloudStg_properties_typeProperties_url": {
+			"value": "https://datalakecloud.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://storageaccountdatal1.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://datalakecloud.dfs.core.windows.net/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://KeyValDataLakegen2.vault.azure.net/"
+		},
+		"FileServer_Local_properties_typeProperties_host": {
+			"value": "\\\\US-PF19M9NG\\Users\\dbellam\\Downloads\\Sample Files\\CSV"
+		},
+		"FileServer_Local_properties_typeProperties_userId": {
+			"value": "EAD\\dbellam"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "EAD\\dbellam"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
