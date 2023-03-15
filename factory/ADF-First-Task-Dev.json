@@ -1,0 +1,9 @@
+{
+	"name": "ADF-First-Task-Dev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "411aede9-8d07-4375-82fb-a914d043a81f",
+		"tenantId": "a7e0fd9d-5e06-41b7-a908-e56eacbf2346"
+	}
+}

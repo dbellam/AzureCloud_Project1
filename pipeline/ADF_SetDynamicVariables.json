@@ -1,0 +1,130 @@
+{
+	"name": "ADF_SetDynamicVariables",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('Metadata')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "DelimitedText5",
+									"type": "DatasetReference",
+									"parameters": {
+										"Filename": {
+											"value": "@item().Inputfile",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DelimitedText6",
+									"type": "DatasetReference",
+									"parameters": {
+										"foldername": {
+											"value": "@item().FolderName",
+											"type": "Expression"
+										},
+										"filename": {
+											"value": "@item().Outputfile",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"Metadata": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"Inputfile": "upsert_data.csv",
+						"FolderName": "Folder1",
+						"Outputfile": "upsert_dataout.csv"
+					},
+					{
+						"Inputfile": "Start_date.csv",
+						"FolderName": "Folder2",
+						"Outputfile": "Start_dateout.csv"
+					},
+					{
+						"Inputfile": "Sample_data.csv",
+						"FolderName": "Folder3",
+						"Outputfile": "Sample_dataout.csv"
+					},
+					{
+						"Inputfile": "Department.csv",
+						"FolderName": "Folder4",
+						"Outputfile": "Departmentout.csv"
+					},
+					{
+						"Inputfile": "Employee.csv",
+						"FolderName": "Folder5",
+						"Outputfile": "Employeeout.csv"
+					}
+				]
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-03-02T22:35:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

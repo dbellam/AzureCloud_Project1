@@ -1,0 +1,46 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "SourceFolder",
+				"type": "varchar"
+			},
+			{
+				"name": "SourceFile",
+				"type": "varchar"
+			},
+			{
+				"name": "BlobFolder",
+				"type": "varchar"
+			},
+			{
+				"name": "BlobFile",
+				"type": "varchar"
+			},
+			{
+				"name": "SQLSchema",
+				"type": "varchar"
+			},
+			{
+				"name": "SQLTable",
+				"type": "varchar"
+			},
+			{
+				"name": "Flag_IND",
+				"type": "bit"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Metadata"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

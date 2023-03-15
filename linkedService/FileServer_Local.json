@@ -1,0 +1,17 @@
+{
+	"name": "FileServer_Local",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "\\\\US-PF19M9NG\\Users\\dbellam\\Downloads\\Sample Files\\CSV",
+			"userId": "EAD\\dbellam",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwZTg2ZjA0MS0zOGZlLTRjYzMtYjU1Zi1hNzgwZmQ0NDFmMmQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
